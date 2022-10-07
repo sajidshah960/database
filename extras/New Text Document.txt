@@ -1,0 +1,54 @@
+	Connection conn=null;
+		Statement stmt=null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false","root","1234");
+			stmt = conn.createStatement();
+		      
+		      //String sql = "SELECT * FROM test.customer";
+		     
+		      ResultSet result = stmt.executeQuery("select * from customer");
+			while(result.next()) {
+				System.out.println(result.getString("CUSTOMERID")+" "+result.getString("customercol"));
+				
+			}
+			conn.close();
+		}
+		catch(SQLException se) {
+			se.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+
+
+
+action=new 
+	    ActionListener() {
+	    	public void actionPerformed(ActionEvent e){
+	    		if(operator=='+') {screenText=String.format("%.2f",firstOperand+secondOperand);screen.setText(screenText);}
+	    		//String screenText=screen.getText()+"=";
+	    		//screen.setText(screenText);
+	    	}
+	    };
+	    buttonEqual.addActionListener(action); 
+
+
+
+
+INSERT INTO user (`USER_NAME`, `PASSWORD`, `ACCOUNT_CREATED`) VALUES ('majid', '234', '2020-07-03');
+
+
+INSERT INTO `university`.`course` (`name`, `code`, `teacher`, `credit_hours`)
+ VALUES ('computer', 'cs101', 'sir sajid', '3');
+
+INSERT INTO `university`.`student` (`name`, `email`, `cnic`, `joining_date`) 
+VALUES ('majid', 'majid@gmail.com', '3740581635478', '2020-04-04');
+
+
+INSERT INTO `university`.`registration` (`reg_date`, `student_id`, `course_id`) 
+VALUES ('2020-04-04', '1', '1');
+
+UPDATE `university`.`student` SET `name` = 'sajid', `email` = 'sss', `cnic` = '213123' WHERE (`student_id` = '6');
+DELETE FROM `university`.`student` WHERE (`student_id` = '6');
+

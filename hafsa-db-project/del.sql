@@ -1,0 +1,12 @@
+drop table registration_history;
+drop table registration;
+drop table courses_offered;
+drop table student_history;
+drop table student;
+drop table mother_history;
+drop table mother;
+drop table father_history;
+drop table father;
+drop table guardian_history;
+drop table guardian;
+purge recyclebin;
